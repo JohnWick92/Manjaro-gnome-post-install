@@ -31,6 +31,52 @@ makepkg -si
 yay -S sway wl-clipboard wofi waybar swaylock-effects swayidle pavucontrol pamixer wlr-randr swaync swaybg ly
 ```
 
+## Eu uso nvidia e os drivers proprietários por causa do som no displayport
+
+```shellscript
+yay -S nvidia sway-nvidia
+```
+
+## Antes de reiniciar alterer o /etc/default/grub e adicione
+```shellscript
+nvidia_drm.modeset=1 nvidia_drm.fbdev=1
+```
+
+## Remova o kms do /etc/mkinitcpio.conf e adicione em modules
+```shellscript
+nvidia nvidia_uvm nvidia_drm nvidia_modeset
+```
+
+## Crie um hook para que sempre que houver atualização nos drivers ele regenere o initramfs
+
+```shellscript
+sudo mkdir -p /etc/pacman.d/hooks
+sudo echo "[Trigger]
+Operation=Install
+Operation=Upgrade
+Operation=Remove
+Type=Package
+# Uncomment the installed NVIDIA package
+Target=nvidia
+#Target=nvidia-open
+#Target=nvidia-lts
+# If running a different kernel, modify below to match
+Target=linux
+
+[Action]
+Description=Updating NVIDIA module in initcpio
+Depends=mkinitcpio
+When=PostTransaction
+NeedsTargets
+Exec=/bin/sh -c 'while read -r trg; do case $trg in linux*) exit 0; esac; done; /usr/bin/mkinitcpio -P'" > /etc/pacman.d/hooks/nvidia.hook
+```
+
+## Gere o initramfs
+
+```shellscript
+sudo mkinitcpio -P
+```
+
 ## Eu uso o ly em vez do gdm e ativo o cronie para fazer snapshots periódicos do timeshift
 
 ```shellscript
