@@ -42,6 +42,12 @@ yay -S nvidia sway-nvidia
 nvidia_drm.modeset=1 nvidia_drm.fbdev=1
 ```
 
+## E gere novamente o grub com
+
+```shellscript
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 ## Remova o kms do /etc/mkinitcpio.conf e adicione em modules
 ```shellscript
 nvidia nvidia_uvm nvidia_drm nvidia_modeset
