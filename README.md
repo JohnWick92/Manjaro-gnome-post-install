@@ -38,6 +38,7 @@ yay -S nvidia sway-nvidia
 ```
 
 ## Antes de reiniciar alterer o /etc/default/grub e adicione
+
 ```shellscript
 nvidia_drm.modeset=1 nvidia_drm.fbdev=1
 ```
@@ -49,6 +50,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ## Remova o kms do /etc/mkinitcpio.conf e adicione em modules
+
 ```shellscript
 nvidia nvidia_uvm nvidia_drm nvidia_modeset
 ```
@@ -151,15 +153,16 @@ npm i -g yarn && asdf reshim
 ## Autocomplete para o php artisan
 
 ```shellscript
-curl -L --create-dirs -o ~/.config/fish/completions/artisan.fish <https://github.com/adriaanzon/fish-artisan-completion/raw/master/completions/artisan.fish>
-curl -L --create-dirs -o ~/.config/fish/completions/php.fish <https://github.com/adriaanzon/fish-artisan-completion/raw/master/completions/php.fish>
-curl -L --create-dirs -o ~/.config/fish/functions/artisan.fish <https://github.com/adriaanzon/fish-artisan-completion/raw/master/functions/artisan.fish>
+curl -L --create-dirs -o ~/.config/fish/completions/artisan.fish https://github.com/adriaanzon/fish-artisan-completion/raw/master/completions/artisan.fish
+curl -L --create-dirs -o ~/.config/fish/completions/php.fish https://github.com/adriaanzon/fish-artisan-completion/raw/master/completions/php.fish
+curl -L --create-dirs -o ~/.config/fish/functions/artisan.fish https://github.com/adriaanzon/fish-artisan-completion/raw/master/functions/artisan.fish
 ```
 
 ## Alternativas em rust para programas de linha de comando
 
 ```shellscript
 cargo install ripgrep zoxide fd-find tealdeer procs git-delta bat exa du-dust tokei rmesg grex
+asdf reshim
 ```
 
 ## Alguns aliases que eu me acostumei
