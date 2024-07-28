@@ -102,7 +102,7 @@ yay -S neovim-git wezterm lazygit keychain podman podman-compose ttf-meslo-nerd 
 ## Apps mais avulsos pro dia a dia
 
 ```shellscript
-yay -S ytm-desktop-bin whatsapp-for-linux-bin telegram-desktop-bin discord appimagelauncher okular
+yay -S ytmdesktop-bin whatsapp-for-linux-bin telegram-desktop-bin discord appimagelauncher okular
 ```
 
 ## Como appimage eu uso o [bitwarden](https://bitwarden.com/download/), [beekeeper-community](https://www.beekeeperstudio.io/get-community) e o [insomnium](https://github.com/ArchGPT/insomnium/releases)
@@ -185,5 +185,5 @@ alias --save ip="ip -c -br a"
 - Caso não se encaixe em uma das alternativas acima confira tudo do [início](#intro)
 
 ```shellscript
-yay -S --needed --no-confirm sway wl-clipboard wofi waybar swaylock-effects swayidle pavucontrol pamixer wlr-randr swaync swaybg ly neovim-git wezterm lazygit keychain podman podman-compose ttf-meslo-nerd btop veracrypt ytm-desktop-bin whatsapp-for-linux-bin telegram-desktop-bin discord appimagelauncher okular libzip oniguruma postgresql-libs re2c
+yay -S --needed --no-confirm sway wl-clipboard wofi waybar swaylock-effects swayidle pavucontrol pamixer wlr-randr swaync swaybg ly neovim-git wezterm lazygit keychain podman podman-compose ttf-meslo-nerd btop veracrypt ytmdesktop-bin whatsapp-for-linux-bin telegram-desktop-bin discord appimagelauncher okular libzip oniguruma postgresql-libs re2c
 ```
