@@ -37,7 +37,7 @@ yay -S sway wl-clipboard wofi waybar swaylock-effects swayidle pavucontrol pamix
 yay -S nvidia sway-nvidia
 ```
 
-## Antes de reiniciar alterer o /etc/default/grub e adicione
+## Antes de reiniciar alterer o /etc/default/grub e adicione na linha GRUB_CMDLINE_LINUX_DEFAULT
 
 ```shellscript
 nvidia_drm.modeset=1 nvidia_drm.fbdev=1
@@ -49,7 +49,7 @@ nvidia_drm.modeset=1 nvidia_drm.fbdev=1
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-## Remova o kms do /etc/mkinitcpio.conf e adicione em modules
+## Remova o kms dos HOOKS em /etc/mkinitcpio.conf e adicione em modules
 
 ```shellscript
 nvidia nvidia_uvm nvidia_drm nvidia_modeset
@@ -76,7 +76,7 @@ Description=Updating NVIDIA module in initcpio
 Depends=mkinitcpio
 When=PostTransaction
 NeedsTargets
-Exec=/bin/sh -c 'while read -r trg; do case $trg in linux*) exit 0; esac; done; /usr/bin/mkinitcpio -P'" > /etc/pacman.d/hooks/nvidia.hook
+Exec=/bin/sh -c 'while read -r trg; do case $trg in linux*) exit 0; esac; done; /usr/bin/mkinitcpio -P'" | sudo tee /etc/pacman.d/hooks/nvidia.hook > /dev/null
 ```
 
 ## Gere o initramfs
