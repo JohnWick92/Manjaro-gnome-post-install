@@ -161,7 +161,7 @@ curl -L --create-dirs -o ~/.config/fish/functions/artisan.fish https://github.co
 ## Alternativas em rust para programas de linha de comando
 
 ```shellscript
-cargo install ripgrep zoxide fd-find tealdeer procs git-delta bat exa du-dust tokei rmesg grex
+cargo install ripgrep zoxide fd-find tealdeer procs git-delta bat exa du-dust tokei rmesg grex cargo-nextest
 asdf reshim
 ```
 
