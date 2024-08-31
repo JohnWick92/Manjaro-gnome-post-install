@@ -147,7 +147,7 @@ asdf install rust latest && asdf global rust latest
 asdf install java openjdk-21 && asdf global java openjdk-21
 asdf install php 8.3.9 && asdf global php 8.3.9
 asdf install zig 0.13.0 && asdf global zig 0.13.0
-npm i -g yarn && asdf reshim
+npm i -g yarn && && npm i -g pnpm asdf reshim
 ```
 
 ## Autocomplete para o php artisan
@@ -185,5 +185,5 @@ alias --save ip="ip -c -br a"
 - Caso não se encaixe em uma das alternativas acima confira tudo do [início](#intro)
 
 ```shellscript
-yay -S --needed --no-confirm sway wl-clipboard wofi waybar swaylock-effects swayidle pavucontrol pamixer wlr-randr swaync swaybg ly neovim-git wezterm lazygit keychain podman podman-compose ttf-meslo-nerd btop veracrypt ytmdesktop-bin whatsapp-for-linux-bin telegram-desktop-bin discord appimagelauncher okular libzip oniguruma postgresql-libs re2c
+yay -S --needed --noconfirm sway wl-clipboard wofi waybar swaylock-effects swayidle pavucontrol pamixer wlr-randr swaync swaybg ly neovim-git wezterm lazygit keychain podman podman-compose ttf-meslo-nerd btop veracrypt ytmdesktop-bin whatsapp-for-linux-bin telegram-desktop-bin discord appimagelauncher okular libzip oniguruma postgresql-libs re2c
 ```
