@@ -1,4 +1,5 @@
 <h1 id="intro">Meu pós instalação do manjaro gnome padrão</h1>
+## Mudei para o manjaro kde, devo fazer uma branch com as mudanças
 
 ## Confira meus dotfiles para usar minhas configurações
 
@@ -28,7 +29,7 @@ makepkg -si
 ## Sway e utilitários
 
 ```shellscript
-yay -S sway wl-clipboard wofi waybar swaylock-effects swayidle pavucontrol pamixer wlr-randr swaync swaybg ly
+yay -S sway wl-clipboard wofi waybar swaylock-effects swayidle pavucontrol pamixer wlr-randr swaync swaybg ly ponymix
 ```
 
 ## Eu uso nvidia e os drivers proprietários por causa do som no displayport
@@ -147,7 +148,7 @@ asdf install rust latest && asdf global rust latest
 asdf install java openjdk-21 && asdf global java openjdk-21
 asdf install php 8.3.9 && asdf global php 8.3.9
 asdf install zig 0.13.0 && asdf global zig 0.13.0
-npm i -g yarn && && npm i -g pnpm asdf reshim
+npm i -g yarn && npm i -g pnpm && asdf reshim
 ```
 
 ## Autocomplete para o php artisan
@@ -174,6 +175,18 @@ alias --save zz="zig build"
 alias --save ip="ip -c -br a"
 ```
 
+## Emulação com qemu-kvm e libvirt
+
+```shellscript
+yay -S qemu-desktop libvirt
+```
+
+## Evitar snapshots do btrfs no libvirt
+
+```shellscript
+sudo chattr +C /var/lib/libvirt
+```
+
 <h2 id="all-in-one">Um comando para todos reger, um comando para a encontrá-los...</h2>
 
 ## Ele irá apenas instalar os pacotes do sistema... Linguagens, alias etc tem que ser manualmente o_O
@@ -185,5 +198,5 @@ alias --save ip="ip -c -br a"
 - Caso não se encaixe em uma das alternativas acima confira tudo do [início](#intro)
 
 ```shellscript
-yay -S --needed --noconfirm sway wl-clipboard wofi waybar swaylock-effects swayidle pavucontrol pamixer wlr-randr swaync swaybg ly neovim-git wezterm lazygit keychain podman podman-compose ttf-meslo-nerd btop veracrypt ytmdesktop-bin whatsapp-for-linux-bin telegram-desktop-bin discord appimagelauncher okular libzip oniguruma postgresql-libs re2c
+yay -S --needed --noconfirm sway wl-clipboard wofi waybar swaylock-effects swayidle pavucontrol pamixer wlr-randr swaync swaybg ly neovim-git wezterm lazygit keychain podman podman-compose ttf-meslo-nerd btop veracrypt ytmdesktop-bin whatsapp-for-linux-bin telegram-desktop-bin discord appimagelauncher okular libzip oniguruma postgresql-libs re2c ponymix qemu-desktop libvirt
 ```
