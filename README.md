@@ -1,5 +1,7 @@
 <h1 id="intro">Meu pós instalação do manjaro gnome padrão</h1>
 ## Mudei para o manjaro kde, devo fazer uma branch com as mudanças
+## Copie a pasta wallpapers para ~/Pictures/ para funcionar bem com o sway
+## Fiz um pequena filtragem dos wallpapers que eu mais gostei vou melhorando com o tempo ;)
 
 ## Confira meus dotfiles para usar minhas configurações
 
